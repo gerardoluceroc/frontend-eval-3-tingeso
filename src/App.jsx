@@ -1,11 +1,13 @@
-import { Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import { MenuBarra } from "./components/MenuBarra";
 
 export function App() {
   return (
     <>
-      <MenuBarra/>
-      <div>Wena los k</div>
+      <Box bgColor={'lightsalmon'} h={739}>
+        <MenuBarra/>
+        <div>Wena los dkk</div>
+      </Box>
       
         
     </>
