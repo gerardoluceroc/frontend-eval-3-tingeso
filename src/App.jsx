@@ -4,7 +4,8 @@ import ImageSlider from "./components/ImageSlider";
 import logoPizzaHouse from "./assets/pizzaHouseLogo.png"
 import logoPizzaHouse2 from "./assets/pizza-house-transparente.png"
 import SliderBeta from "./components/ImageSlider";
-
+import Footer  from "./components/Footer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 export function App() {
 
   // eslint-disable-next-line no-lone-blocks
@@ -26,13 +27,16 @@ export function App() {
 </div>*/}
   return (
     <>
+      <Router>
       <Box bgColor={'lightsalmon'} h={739}>
         <MenuBarra/>
         <div>Wena los dkk</div>
         <ImageSlider/>
+        <Footer/>
         
 
       </Box>
+      </Router>
       
         
     </>
