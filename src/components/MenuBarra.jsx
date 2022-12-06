@@ -13,8 +13,10 @@ import {
 import {FaUserAlt} from "react-icons/fa";
 import {BsFillCartFill} from "react-icons/bs";
 import {BiStoreAlt} from "react-icons/bi"
+import {FaPizzaSlice} from "react-icons/fa"
 
 import logoPizza from '../assets/pizza-house-transparente.png'
+{/* Componente Relacionado con el menu de la página*/}
 export function MenuBarra() {
   return (
     <>
@@ -24,17 +26,17 @@ export function MenuBarra() {
       
         <IconButton icon={<Image src={logoPizza} boxSize='130px'></Image>} colorScheme={'oldlace'} px={'5'} py={'10'}/>
 
-        <MenuButton as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
+        <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
           <Text fontSize='2xl' color='oldlace'>Menú</Text>
-        </MenuButton>
+        </Box>
 
-        <MenuButton as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
+        <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
           <Text fontSize='2xl' color='oldlace'>Arma Tu Pizza</Text>
-        </MenuButton>
+        </Box>
         
-        <MenuButton as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
+        <Box as={Button} colorScheme={'blackAlpha'} px={'1'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<FaPizzaSlice/>}>
           <Text fontSize='2xl' color='oldlace'>Consultar Pedido</Text>
-        </MenuButton>
+        </Box>
 
         <Stack
           flex={{ base: 1, md: 0 }}
@@ -42,19 +44,19 @@ export function MenuBarra() {
           direction={'row'}
           spacing={400}>
 
-          <MenuButton as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<BiStoreAlt size={25}/>}>
+          <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<BiStoreAlt size={25}/>}>
             <Text fontSize='2xl' color='oldlace'>Locales</Text>
-          </MenuButton>
+          </Box>
 
-          <MenuButton as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<FaUserAlt />}>
+          <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<FaUserAlt />}>
             <Text fontSize='2xl' color='oldlace'>Iniciar Sesión</Text>
-          </MenuButton>
+          </Box>
 
         </Stack>
 
-        <MenuButton as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<BsFillCartFill/>}>
+        <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<BsFillCartFill/>}>
             <Text fontSize='2xl' color='oldlace'>Carrito</Text>
-          </MenuButton>
+          </Box>
 
         
 
