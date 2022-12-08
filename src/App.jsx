@@ -1,11 +1,10 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { MenuBarra } from "./components/MenuBarra";
 import ImageSlider from "./components/ImageSlider";
-import logoPizzaHouse from "./assets/pizzaHouseLogo.png"
-import logoPizzaHouse2 from "./assets/pizza-house-transparente.png"
-import SliderBeta from "./components/ImageSlider";
 import Footer  from "./components/Footer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
+import { MenuPage } from "./components/MenuPage";
+import { HomePage } from "./components/HomePage";
 export function App() {
 
   // eslint-disable-next-line no-lone-blocks
@@ -27,17 +26,11 @@ export function App() {
 </div>*/}
   return (
     <>
-      <Router>
-      <Box bgColor={'lightsalmon'} h={739}>
-        <MenuBarra/>
-        <div>Wena los dkk</div>
-        <ImageSlider/>
-        <Footer/>
-        
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/Menu" element={<MenuPage/>} />
+      </Routes>
 
-      </Box>
-      </Router>
-      
         
     </>
   );
