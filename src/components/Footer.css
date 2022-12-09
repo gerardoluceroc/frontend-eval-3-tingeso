@@ -1,6 +1,6 @@
 .footer {
-    color: rgba(255, 255, 255, 0.551);
-    background: rgb(20, 20, 20);
+    color: lightgray;
+    background: darkgray;
     padding: 50px 0 20px 0;
   }
   
@@ -24,7 +24,7 @@
   .footer_col a {
     text-decoration: none;
     transition: 0.2s ease;
-    color: rgba(134, 134, 251, 0.5);
+    color: white;
   }
   
   .footer_col a:hover {

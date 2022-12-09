@@ -8,7 +8,7 @@ import { FaPizzaSlice } from "react-icons/fa";
 function Footer() {
   const linkStyle = {
     textDecoration: "none",
-    color: "white",
+    color: "black",
   };
 
   return (
