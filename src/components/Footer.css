@@ -28,7 +28,7 @@
   }
   
   .footer_col a:hover {
-    color: rgba(134, 134, 251, 1);
+    color: white;
     transform: translateX(20px);
   }
   

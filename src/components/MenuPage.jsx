@@ -5,6 +5,7 @@ import pizzaAmericanaImagen from "../assets/pizza americana.jpg"
 import { BsFillCartFill } from "react-icons/bs";
 import { ArmaTuPizzaItem, PizzaAmericana, PizzaBBQChicken, PizzaCampesina, PizzaHawaiana, PizzaMechadaBBQ, PizzaVeganQueen } from "./PizzaItem";
 import { CatalogoPizzas } from "./CatalogoPizzas";
+import { CatalogoBebidas } from "./CatalogoBebidas";
 
 export function MenuPage(){
     return(
@@ -12,18 +13,35 @@ export function MenuPage(){
         <>  
             <Box bgColor={'lightsalmon'}>
                 <MenuBarra/>
-                <Container maxWidth={"full"}>
-                    <Container>
-                    <Text 
-                    align={"center"}
-                    fontSize={"70px"}
-                    as='b'
-                    color={"ivory"} >
-                        Pizzas
-                </Text>
+                <Stack direction={"column"} spacing={5}>
+                    <Container maxWidth={"full"}>
+                        <Container>
+                            <Text 
+                            align={"center"}
+                            fontSize={"70px"}
+                            as='b'
+                            color={"ivory"} >
+                                Pizzas
+                            </Text>
+                        </Container>
+                        <CatalogoPizzas/>
                     </Container>
-                    <CatalogoPizzas/>
-                </Container>
+
+                    <Container maxWidth={"full"}>
+                        <Container>
+                            <Text 
+                            align={"center"}
+                            fontSize={"70px"}
+                            as='b'
+                            color={"ivory"} >
+                                Bebestibles
+                            </Text>
+                        </Container>
+                        <CatalogoBebidas/>
+                    </Container>
+
+
+                </Stack>
                 <Footer/>
                 
             </Box>
