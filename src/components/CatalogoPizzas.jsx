@@ -1,5 +1,5 @@
 import { Box, Container, Flex, HStack, Spacer, Stack } from "@chakra-ui/react";
-import { ArmaTuPizzaItem, PizzaAmericana, PizzaBBQChicken, PizzaCampesina, PizzaHawaiana, PizzaMechadaBBQ, PizzaVeganQueen } from "./PizzaItem";
+import { ArmaTuPizzaItem, PizzaAmericana, PizzaBBQChicken, PizzaCampesina, PizzaCordillerana, PizzaHawaiana, PizzaMechadaBBQ, PizzaSuperPepperoni, PizzaVeganQueen } from "./PizzaItem";
 
 export function CatalogoPizzas(){
     return(
@@ -18,7 +18,11 @@ export function CatalogoPizzas(){
             <PizzaMechadaBBQ/>   
             <PizzaVeganQueen/>
             </HStack>
+            <HStack spacing={10}> 
+            <PizzaCordillerana/> 
+            <PizzaSuperPepperoni/>   
             <ArmaTuPizzaItem/>
+            </HStack>
             </Stack>        
 
         </Container>

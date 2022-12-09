@@ -6,6 +6,8 @@ import { BsFillCartFill } from "react-icons/bs";
 import { ArmaTuPizzaItem, PizzaAmericana, PizzaBBQChicken, PizzaCampesina, PizzaHawaiana, PizzaMechadaBBQ, PizzaVeganQueen } from "./PizzaItem";
 import { CatalogoPizzas } from "./CatalogoPizzas";
 import { CatalogoBebidas } from "./CatalogoBebidas";
+import { CatalogoSalsas } from "./CatalogoSalsas";
+import { CatalogoAcompañamientos } from "./CatalogoAcompañamientos";
 
 export function MenuPage(){
     return(
@@ -31,6 +33,32 @@ export function MenuPage(){
                         <Container>
                             <Text 
                             align={"center"}
+                            fontSize={"55px"}
+                            as='b'
+                            color={"ivory"} >
+                                Acompañamientos
+                            </Text>
+                        </Container>
+                        <CatalogoAcompañamientos/>
+                    </Container>
+
+                    <Container maxWidth={"full"}>
+                        <Container>
+                            <Text 
+                            align={"center"}
+                            fontSize={"70px"}
+                            as='b'
+                            color={"ivory"} >
+                                Salsas
+                            </Text>
+                        </Container>
+                        <CatalogoSalsas/>
+                    </Container>
+
+                    <Container maxWidth={"full"}>
+                        <Container>
+                            <Text 
+                            align={"center"}
                             fontSize={"70px"}
                             as='b'
                             color={"ivory"} >
@@ -41,8 +69,8 @@ export function MenuPage(){
                     </Container>
 
 
+                    <Footer/>
                 </Stack>
-                <Footer/>
                 
             </Box>
 

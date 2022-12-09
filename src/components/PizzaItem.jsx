@@ -8,6 +8,8 @@ import pizzaHawaianaImagen from "../assets/pizza hawaina.jpg"
 import pizzaMechadaBBQImagen from "../assets/pizza mechada BBQ.png"
 import pizzaVeganQueenImagen from "../assets/pizza vegan queen.png"
 import pizzaPersonalizadaImagen from "../assets/pizza personalizada.png"
+import PizzaCordilleranaImagen from "../assets/pizza la cordillerana.jpg"
+import pizzaSuperPepperoniImagen from "../assets/pizza super pepperoni.jpg"
 
 export function PizzaAmericana(){
     return(
@@ -40,7 +42,7 @@ export function PizzaAmericana(){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $13990
+                    $14.750
                 
                 </Text>
 
@@ -116,7 +118,7 @@ export function PizzaBBQChicken(){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $13990
+                    $14.750
                 
                 </Text>
 
@@ -211,7 +213,7 @@ export function PizzaCampesina(){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $13990
+                    $14.750
                 
                 </Text>
 
@@ -268,7 +270,7 @@ export function PizzaHawaiana(){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $13990
+                    $12.750
                 
                 </Text>
 
@@ -351,7 +353,7 @@ export function PizzaMechadaBBQ(){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $13990
+                    $15.750
                 
                 </Text>
 
@@ -429,7 +431,146 @@ export function PizzaVeganQueen(){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $13990
+                    $14.750
+                
+                </Text>
+
+                <Box
+                as={Button}
+                bgColor={'wheat'}
+                color="lightsalmon"
+                rightIcon={<BsFillCartFill/>}>
+                    <Text fontSize={"20px"}>Agregar</Text>
+                </Box>
+
+                        
+            </Stack>
+         </Box>
+
+
+    )
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export function PizzaCordillerana(){
+    return(
+
+        <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
+            <Stack spacing={2}>
+                <Image 
+                    src={PizzaCordilleranaImagen} 
+                    boxSize="200px"
+                    borderRadius='300px'
+                    w={"366"}
+                    h={"200"}
+                    
+                />
+                <Text 
+                align="center"
+                fontSize="25px"
+                casing={"uppercase"}
+                decoration={"underline dotted"}
+                >
+                    La Cordillerana
+                </Text>
+
+                <Text 
+                align={"center"}
+                fontSize={"15px"} >
+                    Delicioso chorizo, carne, pimentón y cebolla
+                </Text>
+
+                <Text
+                align={"center"}
+                fontSize={"15px"}
+                as={'b'}>
+                    $14.750
+                
+                </Text>
+
+                <Box
+                as={Button}
+                bgColor={'wheat'}
+                color="lightsalmon"
+                rightIcon={<BsFillCartFill/>}>
+                    <Text fontSize={"20px"}>Agregar</Text>
+                </Box>
+
+                        
+            </Stack>
+         </Box>
+
+
+    )
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export function PizzaSuperPepperoni(){
+    return(
+
+        <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
+            <Stack spacing={2}>
+                <Image 
+                    src={pizzaSuperPepperoniImagen} 
+                    boxSize="200px"
+                    borderRadius='300px'
+                    w={"366"}
+                    h={"200"}
+                    
+                />
+                <Text 
+                align="center"
+                fontSize="25px"
+                casing={"uppercase"}
+                decoration={"underline dotted"}
+                >
+                    Super Pepperoni
+                </Text>
+
+                <Text 
+                align={"center"}
+                fontSize={"15px"} >
+                    Extra queso mozzarella, doble pepperoni.
+                </Text>
+
+                <Text
+                align={"center"}
+                fontSize={"15px"}
+                as={'b'}>
+                    $14.750
                 
                 </Text>
 
