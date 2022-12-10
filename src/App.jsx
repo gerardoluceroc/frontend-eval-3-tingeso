@@ -5,6 +5,7 @@ import Footer  from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
 import { MenuPage } from "./components/MenuPage";
 import { HomePage } from "./components/HomePage";
+
 export function App() {
 
   // eslint-disable-next-line no-lone-blocks

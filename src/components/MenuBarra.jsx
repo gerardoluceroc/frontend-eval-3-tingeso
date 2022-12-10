@@ -9,6 +9,14 @@ import {
     Image,
     Stack,
     HStack,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalBody,
+    ModalFooter,
+    useDisclosure,
 } from '@chakra-ui/react'
 
 import {FaUserAlt} from "react-icons/fa";
@@ -20,24 +28,45 @@ import logoPizza from '../assets/pizza-house-transparente.png'
 import { Link } from 'react-router-dom';
 {/* Componente Relacionado con el menu de la página*/}
 export function MenuBarra() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
 
     <Flex bg='oldlace' w='100%' p={1} color='white'>
+          <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Create your account</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody pb={6}>
+                        Lorem
+                    </ModalBody>
+
+                    <ModalFooter>
+                        <Button colorScheme='blue' mr={3}>
+                            Save
+                        </Button>
+                        <Button onClick={onClose}>Cancel</Button>
+                    </ModalFooter>
+                </ModalContent>
+           </Modal>
       <Menu>
         <HStack spacing={'7px'}>
         <Link to={"/"}>
           <IconButton icon={<Image src={logoPizza} boxSize='130px'></Image>} colorScheme={'oldlace'} px={'5'} py={'10'}/>
         </Link>
+
         <Link to={"/Menu"}>
           <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
             <Text fontSize='2xl' color='oldlace'>Menú</Text>
           </Box>
         </Link>
 
-        <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
-          <Text fontSize='2xl' color='oldlace'>Arma Tu Pizza</Text>
-        </Box>
+
+          <Box as={Button} onClick={onOpen} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
+            <Text fontSize='2xl' color='oldlace'>Arma Tu Pizza</Text>
+          </Box>
+
         
         <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<FaPizzaSlice/>}>
           <Text fontSize='2xl' color='oldlace'>Consultar Pedido</Text>

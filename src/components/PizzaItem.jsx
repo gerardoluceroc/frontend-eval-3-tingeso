@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, HStack, Image, Link, LinkBox, LinkOverlay, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, StackDivider, Text, useDisclosure } from "@chakra-ui/react";
 import { BsFillCartFill } from "react-icons/bs";
 import { FaPizzaSlice } from "react-icons/fa";
 import pizzaAmericanaImagen from "../assets/pizza americana.jpg"
@@ -624,9 +624,61 @@ export function PizzaSuperPepperoni(){
 
 
 export function ArmaTuPizzaItem(){
-    return(
 
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    
+    
+    return(
+        
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
+
+            <Modal closeOnOverlayClick={false} size={"xl"}isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+
+                <ModalContent>
+                    <Stack direction={"column"} spacing={6}>
+                        <ModalHeader fontSize={"35"}>Arma Tu Pizza</ModalHeader>
+                    
+                        <ModalCloseButton />
+                    
+                        <ModalBody pb={8}>
+                            <Stack direction={"column"} spacing={5} divider={<StackDivider borderColor='gray.200' />}>
+                                <Box>
+                                    <Stack direction={"column"} spacing={1}>
+                                        <Text
+                                        as='b'
+                                        fontSize={"md"}>
+                                            Tamaño Y Tipo de Pizza
+                                        </Text>
+
+                                        <HStack spacing={2}>
+                                            <Button>
+                                                Familiar
+                                            </Button>
+
+                                        </HStack>
+                                       
+                                    </Stack>
+                                </Box>
+                                <Text>Bro</Text>
+
+                            </Stack>
+                            Footer
+                        </ModalBody>
+                    </Stack>
+
+                    <ModalFooter>
+                        <Button colorScheme='blue' mr={3}>
+                            Save
+                        </Button>
+                        <Button onClick={onClose}>Cancel</Button>
+                    </ModalFooter>
+                </ModalContent>
+                
+           </Modal>
+
+
             <Stack spacing={2}>
                 <Image 
                     src={pizzaPersonalizadaImagen} 
@@ -651,13 +703,16 @@ export function ArmaTuPizzaItem(){
                     Arma tu propia pizza con los ingredientes que tú quieras
                 </Text>
 
-                <Box
-                as={Button}
-                bgColor={'wheat'}
-                color="lightsalmon"
-                rightIcon={<FaPizzaSlice/>}>
-                    <Text fontSize={"20px"}>Arma Tu Pizza</Text>
-                </Box>
+                    <Box
+                    as={Button}
+                    onClick={onOpen}
+                    bgColor={'wheat'}
+                    color="lightsalmon"
+                    rightIcon={<FaPizzaSlice/>}>
+                        
+                        <Text fontSize={"20px"}>Arma Tu Pizza</Text>
+
+                    </Box>
 
                         
             </Stack>

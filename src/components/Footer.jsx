@@ -32,12 +32,11 @@ function Footer() {
       <div className="footer_cols">
         <div className="footer_col">
           <h3>Nuestros Servicios</h3>
-          <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/electric-mountain-bikes/e-caliber/e-caliber-9-9-xx1-axs/p/34710/?colorCode=bluedark_blue">
+          <Link to={"/Menu"}>
+          <a>
             Menú
           </a>
-          <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/cross-country-mountain-bikes/supercaliber/supercaliber-9-8-gx-axs/p/35195/?colorCode=red_black">
-            Arma Tu Pizza
-          </a>
+          </Link>
           <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/trail-mountain-bikes/slash/slash-9-8-gx-axs/p/35192/?colorCode=grey">
             Consultar Pedido
           </a>
