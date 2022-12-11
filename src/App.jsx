@@ -5,6 +5,7 @@ import Footer  from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
 import { MenuPage } from "./components/MenuPage";
 import { HomePage } from "./components/HomePage";
+import { CarritoPage } from "./components/CarritoPage/CarritoPage";
 
 export function App() {
 
@@ -30,6 +31,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/Menu" element={<MenuPage/>} />
+        <Route path="/Carrito" element={<CarritoPage/>} />
       </Routes>
 
         

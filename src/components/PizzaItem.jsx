@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, HStack, Image, Link, LinkBox, LinkOverlay, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, StackDivider, Text, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, HStack, Image, Link, LinkBox, LinkOverlay, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, StackDivider, Text, useDisclosure, useRadio, useRadioGroup } from "@chakra-ui/react";
 import { BsFillCartFill } from "react-icons/bs";
 import { FaPizzaSlice } from "react-icons/fa";
 import pizzaAmericanaImagen from "../assets/pizza americana.jpg"
@@ -10,6 +10,7 @@ import pizzaVeganQueenImagen from "../assets/pizza vegan queen.png"
 import pizzaPersonalizadaImagen from "../assets/pizza personalizada.png"
 import PizzaCordilleranaImagen from "../assets/pizza la cordillerana.jpg"
 import pizzaSuperPepperoniImagen from "../assets/pizza super pepperoni.jpg"
+import { OpcionesBotones } from "./ButtonOptionGroup";
 
 export function PizzaAmericana(){
     return(
@@ -627,13 +628,26 @@ export function ArmaTuPizzaItem(){
 
     const { isOpen, onOpen, onClose } = useDisclosure();
 
+    const opcionesTamañoMasa = ["Familiar", "Extra Grande", "Mediana"]
+    const opcionesTipoMasa = ["Tradicional", "Normal", "Delgada"]
+    const opcionesSalsaBase = ["Salsa Regular", "Poca Salsa", "Extra Salsa"]
+    const opcionesCantidadSalsa = ["Salsa Tomate", "Salsa BBQ", "Salsa Alfredo", "Sin Salsa"]
+    const opcionesCantidadQuedo = ["Mozzarella Base", "Sin Mozzarella", "Poca Mozzarella", "Extra Mozzarella"]
+    const opcionesShot = ["Shot de BBQ", "Shot de Pesto", "Sin Shots"]
+    const opcionesCarnes = ["Carne", "Carne Mechada", "Pepperoni", "Salchicha", "Jamón", "Pollo", "Tocino"]
+    const opcionesVegetales = ["Aceitunas", "Choclo", "Piña", "Cebolla", "Pimentón", "Tomate", "Champiñones"]
+    const opcionesTiposQueso = ["Gouda", "Mozzarella"]
+
+    
+
+
     
     
     return(
         
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
 
-            <Modal closeOnOverlayClick={false} size={"xl"}isOpen={isOpen} onClose={onClose}>
+            <Modal closeOnOverlayClick={false} size={"3xl"}isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
 
                 <ModalContent>
@@ -645,34 +659,88 @@ export function ArmaTuPizzaItem(){
                         <ModalBody pb={8}>
                             <Stack direction={"column"} spacing={5} divider={<StackDivider borderColor='gray.200' />}>
                                 <Box>
-                                    <Stack direction={"column"} spacing={1}>
+                                    <Stack direction={"column"} spacing={3}>
                                         <Text
                                         as='b'
                                         fontSize={"md"}>
-                                            Tamaño Y Tipo de Pizza
+                                            Tamaño Y Tipo de Pizzaa
                                         </Text>
+                                        <OpcionesBotones id="IDOpcionesTamañoMasa" opciones={opcionesTamañoMasa}/>
+                                        {console.log("probando el console.log ", OpcionesBotones.options)}
+                                        <OpcionesBotones opciones={opcionesTipoMasa}/>
 
-                                        <HStack spacing={2}>
-                                            <Button>
-                                                Familiar
-                                            </Button>
+                                        <Text
+                                        as='b'
+                                        fontSize={"md"}>
+                                            Salsa Base
+                                        </Text>                                    
+                                        <OpcionesBotones opciones={opcionesSalsaBase}/>
 
-                                        </HStack>
-                                       
+                                        <Text
+                                        as='b'
+                                        fontSize={"md"}>
+                                            Cantidad de Salsa
+                                        </Text>                                    
+                                        <OpcionesBotones opciones={opcionesCantidadSalsa}/>
+
+                                        <Text
+                                        as='b'
+                                        fontSize={"md"}>
+                                            Cantidad de Queso
+                                        </Text>                                    
+                                        <OpcionesBotones opciones={opcionesCantidadQuedo}/>
                                     </Stack>
                                 </Box>
-                                <Text>Bro</Text>
+
+
+                                <Box>
+                                    <Stack direction={"column"} spacing={3}>
+
+                                        <Text
+                                            as='b'
+                                            fontSize={"md"}>
+                                                Shots
+                                        </Text>                                    
+                                        <OpcionesBotones opciones={opcionesShot}/>
+
+                                        <Text
+                                        as='b'
+                                        fontSize={"md"}>
+                                            Carnes
+                                        </Text>                                    
+                                        <OpcionesBotones opciones={opcionesCarnes}/>
+
+                                        <Text
+                                        as='b'
+                                        fontSize={"md"}>
+                                            Vegetales
+                                        </Text>                                    
+                                        <OpcionesBotones opciones={opcionesVegetales}/>
+
+                                        <Text
+                                        as='b'
+                                        fontSize={"md"}>
+                                            Tipo de Queso
+                                        </Text>                                    
+                                        <OpcionesBotones opciones={opcionesTiposQueso}/>
+
+                                    </Stack>
+
+                            
+
+
+                                </Box>
 
                             </Stack>
-                            Footer
+                            
                         </ModalBody>
                     </Stack>
 
                     <ModalFooter>
-                        <Button colorScheme='blue' mr={3}>
-                            Save
+                        <Button rightIcon={<BsFillCartFill/>} bgColor={"tomato"} color="oldlace" mr={3} colorScheme={"orange"}>
+                            Agregar
                         </Button>
-                        <Button onClick={onClose}>Cancel</Button>
+                        <Button colorScheme={"gray"} bgColor={"gray"} color="oldlace" onClick={onClose}>Cancelar</Button>
                     </ModalFooter>
                 </ModalContent>
                 
@@ -722,3 +790,117 @@ export function ArmaTuPizzaItem(){
     )
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
