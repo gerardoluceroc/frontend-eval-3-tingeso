@@ -43,16 +43,18 @@ export function PizzaAmericana(){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $14.750
-                
+                    $14.750    
                 </Text>
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaAmericana");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonPizzaAmericana" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -125,10 +127,13 @@ export function PizzaBBQChicken(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaBBQChicken");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonPizzaBBQChicken" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -220,10 +225,13 @@ export function PizzaCampesina(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaCampesina");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonPizzaCampesina" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -277,10 +285,13 @@ export function PizzaHawaiana(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaHawaiana");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonPizzaHawaiana" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -360,10 +371,13 @@ export function PizzaMechadaBBQ(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaMechadaBBQ");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonPizzaMechadaBBQ" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -438,10 +452,13 @@ export function PizzaVeganQueen(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaVeganQueen");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonPizzaVeganQueen" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -504,10 +521,13 @@ export function PizzaCordillerana(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaCordillerana");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonPizzaCordillerana" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -577,10 +597,13 @@ export function PizzaSuperPepperoni(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaSuperPepperoni");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonPizzaSuperPepperoni" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         

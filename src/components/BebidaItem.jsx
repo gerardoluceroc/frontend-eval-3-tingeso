@@ -42,10 +42,13 @@ export function Pepsi350(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaPepsi350");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaPepsi350" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -118,10 +121,13 @@ export function Pepsi1L(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaPepsi1L");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaPepsi1L" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -179,10 +185,13 @@ export function PepsiLight350(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaPepsiLight350");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaPepsiLight350" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -250,10 +259,13 @@ export function PepsiLight1L(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaPepsiLight1L");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaPepsiLight1L" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -310,10 +322,13 @@ export function Fanta350(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaFanta350");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaFanta350" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -371,10 +386,13 @@ export function Fanta1L(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaFanta1L");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaFanta1L" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -435,10 +453,13 @@ export function Cachantun500SinGas(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaCachantun500SinGas");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaCachantun500SinGas" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -504,10 +525,13 @@ export function Cachantun500ConGas(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaCachantun500ConGas");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaCachantun500ConGas" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -571,10 +595,13 @@ export function JugoWatts1LDurazno(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaJugoWatts1LDurazno");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaJugoWatts1LDurazno" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -633,10 +660,13 @@ export function JugoWatts1LPiña(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaJugoWatts1LPiña");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonBebidaJugoWatts1LPiña" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         

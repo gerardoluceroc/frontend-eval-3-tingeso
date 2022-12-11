@@ -43,10 +43,13 @@ export function SalsaBBQ(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonSalsaBBQ");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonSalsaBBQ" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -117,10 +120,13 @@ export function SalsaGarlic(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonSalsaGarlic");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonSalsaGarlic" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -192,10 +198,13 @@ export function SalsaMiel(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonSalsaMiel");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonSalsaMiel" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
@@ -269,10 +278,13 @@ export function SalsaTomate(){
 
                 <Box
                 as={Button}
+                onClick={()=>{const textoBoton = document.getElementById("textoBotonSalsaTomate");
+                            textoBoton.textContent="Agregado Al Carrito!";
+                            setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonSalsaTomate" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         

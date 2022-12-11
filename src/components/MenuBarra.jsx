@@ -20,7 +20,7 @@ import {
     StackDivider,
 } from '@chakra-ui/react'
 
-import {FaUserAlt} from "react-icons/fa";
+import {FaCircle, FaUserAlt} from "react-icons/fa";
 import {BsFillCartFill} from "react-icons/bs";
 import {BiStoreAlt} from "react-icons/bi"
 import {FaPizzaSlice} from "react-icons/fa"
@@ -42,6 +42,7 @@ export function MenuBarra() {
     const opcionesVegetales = ["Aceitunas", "Choclo", "Piña", "Cebolla", "Pimentón", "Tomate", "Champiñones"]
     const opcionesTiposQueso = ["Gouda", "Mozzarella"]
 
+    let cantidadItems = 2;
 
 
   return (
@@ -189,7 +190,7 @@ export function MenuBarra() {
         </Stack>
         
         <Link to={"/Carrito"}>
-        <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<BsFillCartFill/>}>
+        <Box as={Button} colorScheme={'blackAlpha'} px={'3'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<><BsFillCartFill/><Text>({cantidadItems})</Text></>}>
             <Text fontSize='2xl' color='oldlace'>Carrito</Text>
         </Box>
         </Link>

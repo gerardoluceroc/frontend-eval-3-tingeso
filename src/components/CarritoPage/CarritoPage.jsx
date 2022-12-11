@@ -5,6 +5,7 @@ import {
     HStack,
     Link,
     Stack,
+    Text,
     useColorModeValue as mode,
   } from '@chakra-ui/react'
   import * as React from 'react'
@@ -13,7 +14,7 @@ import { MenuBarra } from '../MenuBarra'
   import { CartOrderSummary } from './CartOrderSummary'
   import { cartData } from './_data'
   
-  export function CarritoPage(){ 
+  export function CarritoPage(props){ 
     return(
     <>
     <MenuBarra/>
@@ -68,12 +69,21 @@ import { MenuBarra } from '../MenuBarra'
         <Flex direction="column" align="center" flex="1">
           <CartOrderSummary />
           <HStack mt="6" fontWeight="semibold">
-            <p>or</p>
-            <Link color={mode('blue.500', 'blue.200')}>Continue shopping</Link>
+            <p>o</p>
+            <Link to={"/Menu"} color={mode('blue.500', 'blue.200')}>Continuar Comprando</Link>
           </HStack>
         </Flex>
       </Stack>
     </Box>
     </>
     )
+}
+
+
+
+
+export function nose(props){
+  return(
+    <Text color="red" >Hola</Text>
+  )
 }
