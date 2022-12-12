@@ -1,4 +1,5 @@
 import { Box, Button, Container, Flex, HStack, Image, Spacer, Stack, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import { MenuBarra } from "./MenuBarra";
 import pizzaAmericanaImagen from "../assets/pizza americana.jpg"
@@ -10,9 +11,14 @@ import { CatalogoSalsas } from "./CatalogoSalsas";
 import { CatalogoAcompañamientos } from "./CatalogoAcompañamientos";
 
 export function MenuPage(){
+    const [carritoBebidas, setCarritoBebidas] = useState([]);
+
+    const lala = () => {console.log("Estoy en el menu y actualmente el carro es: ",carritoBebidas);}
+
+
     return(
         
-        <>  
+        <>  <Button onClick={()=>{lala()}}>LALA</Button>
             <Box bgColor={'lightsalmon'}>
                 <MenuBarra/>
                 <Stack direction={"column"} spacing={5}>
@@ -65,7 +71,7 @@ export function MenuPage(){
                                 Bebestibles
                             </Text>
                         </Container>
-                        <CatalogoBebidas/>
+                        <CatalogoBebidas actualizarCarritoPadre = {(carrito) => {setCarritoBebidas(carrito)}}/>
                     </Container>
 
 

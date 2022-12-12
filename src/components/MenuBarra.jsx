@@ -69,7 +69,6 @@ export function MenuBarra() {
                                             Tamaño Y Tipo de Pizzaa
                                         </Text>
                                         <OpcionesBotones id="IDOpcionesTamañoMasa" opciones={opcionesTamañoMasa}/>
-                                        {console.log("probando el console.log ", OpcionesBotones.options)}
                                         <OpcionesBotones opciones={opcionesTipoMasa}/>
 
                                         <Text

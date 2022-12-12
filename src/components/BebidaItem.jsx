@@ -11,19 +11,21 @@ import Cachantun500ConGasImagen from "../assets/cachantun 500 con gas.jpg"
 import JugoWatts1LDuraznoImagen from "../assets/watts-durazno 1,5.jpeg"
 import JugoWatts1LPiñaImagen from "../assets/watts-piña-1,5.png"
 
-export function Pepsi350(){
+export function Pepsi350(props){
     return(
 
-        <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
+        <Box id="Pepsi350" bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticulo"
                     src={pepsi350Imagen} 
                     boxSize="200px"
                     borderRadius='330px'
                     w={"366"}
                     h={"200"}
                 />
-                <Text 
+                <Text
+                id="textoNombreArticulo" 
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -33,6 +35,7 @@ export function Pepsi350(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticulo"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -42,13 +45,28 @@ export function Pepsi350(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonBebidaPepsi350");
+                onClick={()=>{
+                            //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                            const nombreArticulo = document.getElementById("textoNombreArticulo");
+                            const precioArticulo = document.getElementById("textoPrecioArticulo");
+                            const imagenArticulo = document.getElementById("imagenArticulo");
+                            let articulo = {
+                                name: nombreArticulo.textContent,
+                                price: precioArticulo.textContent,
+                                description: "",
+                                image: imagenArticulo.getAttribute("src")
+                            };
+                            console.log("Articulo a agregar ",articulo);
+                            props.agregarArticulo(articulo);
+
+                            //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonAgregar");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
                 color="lightsalmon"
                 rightIcon={<BsFillCartFill/>}>
-                    <Text id="textoBotonBebidaPepsi350" fontSize={"20px"}>Agregar</Text>
+                    <Text id="textoBotonAgregar" fontSize={"20px"}>Agregar</Text>
                 </Box>
 
                         
