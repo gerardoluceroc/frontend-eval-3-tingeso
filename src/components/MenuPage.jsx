@@ -20,7 +20,7 @@ export function MenuPage(){
         
         <>  <Button onClick={()=>{lala()}}>LALA</Button>
             <Box bgColor={'lightsalmon'}>
-                <MenuBarra/>
+                <MenuBarra carritoBebidas = {carritoBebidas}/>
                 <Stack direction={"column"} spacing={5}>
                     <Container maxWidth={"full"}>
                         <Container>

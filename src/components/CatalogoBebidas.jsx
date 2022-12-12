@@ -9,21 +9,15 @@ export function CatalogoBebidas(props){
     const [listadoArticulosCarrito, setListadoArticulosCarrito] = useState([]);
 
     //Funcion que agrega un articulo al carrito
-    function agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloCatalogo){
+    function agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloCatalogo, actualizarCarritoPadre){
         let listadoActualizado = [];
         
         listadoActualizado = listadoArticulosCarrito;
         listadoActualizado.push(articuloCatalogo);
         setListadoArticulosCarrito(listadoActualizado);
-        
-        console.log("KKKaAArrito actualmente: ",listadoActualizado);
+        actualizarCarritoPadre(listadoActualizado);
     }
     
-    useEffect(() => {
-        props.actualizarCarritoPadre(listadoArticulosCarrito);
-        console.log("use effect del listado del carrito hijo ejecutado");
-    })
-
     return(
 
         <Container maxWidth={"max"} >
@@ -31,21 +25,39 @@ export function CatalogoBebidas(props){
             <Stack direction={"column"} spacing="5">
             <HStack spacing={10}>
                 <Pepsi350 
-                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar)} 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
                 />  
-                <Pepsi1L/>  
-                <PepsiLight350/> 
-                <PepsiLight1L/> 
-                <Fanta350/>
+                <Pepsi1L 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                />  
+                <PepsiLight350 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                /> 
+                <PepsiLight1L 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                /> 
+                <Fanta350 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                />
    
             
             </HStack>
             <HStack spacing={10}>  
-                <Fanta1L/>
-                <Cachantun500SinGas/> 
-                <Cachantun500ConGas/>
-                <JugoWatts1LDurazno/>
-                <JugoWatts1LPiña/>  
+                <Fanta1L 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                />
+                <Cachantun500SinGas 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                /> 
+                <Cachantun500ConGas 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                />
+                <JugoWatts1LDurazno 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                />
+                <JugoWatts1LPiña 
+                agregarArticulo={(articuloParaAgregar) => agregarArticuloACarrito(listadoArticulosCarrito,setListadoArticulosCarrito,articuloParaAgregar,props.actualizarCarritoPadre)} 
+                />  
             
             </HStack>
 

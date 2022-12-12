@@ -28,8 +28,9 @@ import {FaPizzaSlice} from "react-icons/fa"
 import logoPizza from '../assets/pizza-house-transparente.png'
 import { Link } from 'react-router-dom';
 import { OpcionesBotones } from './ButtonOptionGroup';
+import { useState } from 'react';
 {/* Componente Relacionado con el menu de la página*/}
-export function MenuBarra() {
+export function MenuBarra(props) {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const opcionesTamañoMasa = ["Familiar", "Extra Grande", "Mediana"]
@@ -42,8 +43,12 @@ export function MenuBarra() {
     const opcionesVegetales = ["Aceitunas", "Choclo", "Piña", "Cebolla", "Pimentón", "Tomate", "Champiñones"]
     const opcionesTiposQueso = ["Gouda", "Mozzarella"]
 
-    let cantidadItems = 2;
+    let cantidadArticulosBebidas = props.carritoBebidas.length;
+    console.log("Menu barra cantidad de articulos: ",cantidadArticulosBebidas);
 
+    const [cantidadItems,setCantidadItems] = useState(cantidadArticulosBebidas);
+
+    
 
   return (
     <>
@@ -189,7 +194,7 @@ export function MenuBarra() {
         </Stack>
         
         <Link to={"/Carrito"}>
-        <Box as={Button} colorScheme={'blackAlpha'} px={'3'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<><BsFillCartFill/><Text>({cantidadItems})</Text></>}>
+        <Box as={Button} colorScheme={'blackAlpha'} px={'3'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<><BsFillCartFill/><Text id="textoCantidadItemsCarrito">({cantidadItems})</Text></>}>
             <Text fontSize='2xl' color='oldlace'>Carrito</Text>
         </Box>
         </Link>
