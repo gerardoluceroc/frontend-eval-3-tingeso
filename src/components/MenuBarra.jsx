@@ -29,6 +29,7 @@ import logoPizza from '../assets/pizza-house-transparente.png'
 import { Link } from 'react-router-dom';
 import { OpcionesBotones } from './ButtonOptionGroup';
 import { useState } from 'react';
+import { useEffect } from 'react';
 {/* Componente Relacionado con el menu de la página*/}
 export function MenuBarra(props) {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -43,12 +44,13 @@ export function MenuBarra(props) {
     const opcionesVegetales = ["Aceitunas", "Choclo", "Piña", "Cebolla", "Pimentón", "Tomate", "Champiñones"]
     const opcionesTiposQueso = ["Gouda", "Mozzarella"]
 
-    let cantidadArticulosBebidas = props.carritoBebidas.length;
-    console.log("Menu barra cantidad de articulos: ",cantidadArticulosBebidas);
+    console.log("Menu barra cantidad de articulos: ",props.largoCarritoBebidas);
+    console.log("MEnu Barra articulos: ",props.carritoBebidas);
 
-    const [cantidadItems,setCantidadItems] = useState(cantidadArticulosBebidas);
+    //Se actualiza el numero de articulos que sale en la barra en el botón del carrito al lado del icono
+    let documento = document.getElementById("textoCantidadItemsCarrito");
+    documento.textContent = props.largoCarritoBebidas;
 
-    
 
   return (
     <>
@@ -194,7 +196,7 @@ export function MenuBarra(props) {
         </Stack>
         
         <Link to={"/Carrito"}>
-        <Box as={Button} colorScheme={'blackAlpha'} px={'3'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<><BsFillCartFill/><Text id="textoCantidadItemsCarrito">({cantidadItems})</Text></>}>
+        <Box as={Button} colorScheme={'blackAlpha'} px={'3'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<><BsFillCartFill/><Text id="textoCantidadItemsCarrito"></Text></>}>
             <Text fontSize='2xl' color='oldlace'>Carrito</Text>
         </Box>
         </Link>

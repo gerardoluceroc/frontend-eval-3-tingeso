@@ -13,14 +13,21 @@ import { CatalogoAcompañamientos } from "./CatalogoAcompañamientos";
 export function MenuPage(){
     const [carritoBebidas, setCarritoBebidas] = useState([]);
 
-    const lala = () => {console.log("Estoy en el menu y actualmente el carro es: ",carritoBebidas);}
+    const [largoCarritoBebidas, setLargoCarritoBebidas] = useState(carritoBebidas.length);
+
+    useEffect(()=>{
+        console.log("Estoy en menu page dentro del use effect, largo carrito bebidas ess:",largoCarritoBebidas);
+
+    },[largoCarritoBebidas])
+
+    const lala = () => {console.log("Estoy en el menu y actualmente el carro esss: ",carritoBebidas);}
 
 
     return(
         
         <>  <Button onClick={()=>{lala()}}>LALA</Button>
             <Box bgColor={'lightsalmon'}>
-                <MenuBarra carritoBebidas = {carritoBebidas}/>
+                <MenuBarra largoCarritoBebidas = {largoCarritoBebidas} carritoBebidas={carritoBebidas}/>
                 <Stack direction={"column"} spacing={5}>
                     <Container maxWidth={"full"}>
                         <Container>
@@ -71,7 +78,7 @@ export function MenuPage(){
                                 Bebestibles
                             </Text>
                         </Container>
-                        <CatalogoBebidas actualizarCarritoPadre = {(carrito) => {setCarritoBebidas(carrito)}}/>
+                        <CatalogoBebidas actualizarCarritoPadre = {(carrito) => {setCarritoBebidas(carrito)}} actualizarLargoCarritoPadre={(largo)=>{setLargoCarritoBebidas(largo)}}/>
                     </Container>
 
 
