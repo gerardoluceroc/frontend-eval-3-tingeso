@@ -5,12 +5,13 @@ import salsaGarlicImagen from "../assets/salsa ajo garlic.jpg"
 import salsaTomateImagen from "../assets/salsa tomate.jpg"
 import salsaMielImagen from "../assets/salsa miel.jpg"
 
-export function SalsaBBQ(){
+export function SalsaBBQ(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloSalsaBBQ"
                     src={salsaBBQImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -18,6 +19,7 @@ export function SalsaBBQ(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloSalsaBBQ" 
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -27,6 +29,7 @@ export function SalsaBBQ(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloSalsaBBQ"
                 align="center"
                 fontSize="13px"
                 >
@@ -34,6 +37,7 @@ export function SalsaBBQ(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloSalsaBBQ"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -43,7 +47,23 @@ export function SalsaBBQ(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonSalsaBBQ");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloSalsaBBQ");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloSalsaBBQ");
+                    const imagenArticulo = document.getElementById("imagenArticuloSalsaBBQ");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloSalsaBBQ");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonSalsaBBQ");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -82,12 +102,13 @@ export function SalsaBBQ(){
 
 
 
-export function SalsaGarlic(){
+export function SalsaGarlic(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloSalsaGarlic"
                     src={salsaGarlicImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -95,6 +116,7 @@ export function SalsaGarlic(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloSalsaGarlic"
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -104,6 +126,7 @@ export function SalsaGarlic(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloSalsaGarlic"
                 align="center"
                 fontSize="13px"
                 >
@@ -111,6 +134,7 @@ export function SalsaGarlic(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloSalsaGarlic"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -120,7 +144,23 @@ export function SalsaGarlic(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonSalsaGarlic");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloSalsaGarlic");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloSalsaGarlic");
+                    const imagenArticulo = document.getElementById("imagenArticuloSalsaGarlic");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloSalsaGarlic");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonSalsaGarlic");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -160,12 +200,13 @@ export function SalsaGarlic(){
 
 
 
-export function SalsaMiel(){
+export function SalsaMiel(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloSalsaMiel"
                     src={salsaMielImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -173,6 +214,7 @@ export function SalsaMiel(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloSalsaMiel"
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -182,6 +224,7 @@ export function SalsaMiel(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloSalsaMiel"
                 align="center"
                 fontSize="13px"
                 >
@@ -189,6 +232,7 @@ export function SalsaMiel(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloSalsaMiel"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -198,7 +242,23 @@ export function SalsaMiel(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonSalsaMiel");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloSalsaMiel");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloSalsaMiel");
+                    const imagenArticulo = document.getElementById("imagenArticuloSalsaMiel");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloSalsaMiel");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonSalsaMiel");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -240,12 +300,13 @@ export function SalsaMiel(){
 
 
 
-export function SalsaTomate(){
+export function SalsaTomate(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloSalsaTomate"
                     src={salsaTomateImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -253,6 +314,7 @@ export function SalsaTomate(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloSalsaTomate"
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -262,6 +324,7 @@ export function SalsaTomate(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloSalsaTomate"
                 align="center"
                 fontSize="13px"
                 >
@@ -269,6 +332,7 @@ export function SalsaTomate(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloSalsaTomate"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -278,7 +342,23 @@ export function SalsaTomate(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonSalsaTomate");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloSalsaTomate");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloSalsaTomate");
+                    const imagenArticulo = document.getElementById("imagenArticuloSalsaTomate");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloSalsaTomate");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonSalsaTomate");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}

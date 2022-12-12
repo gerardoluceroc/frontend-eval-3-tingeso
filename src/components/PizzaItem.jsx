@@ -12,12 +12,13 @@ import PizzaCordilleranaImagen from "../assets/pizza la cordillerana.jpg"
 import pizzaSuperPepperoniImagen from "../assets/pizza super pepperoni.jpg"
 import { OpcionesBotones } from "./ButtonOptionGroup";
 
-export function PizzaAmericana(){
+export function PizzaAmericana(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPizzaAmericana"
                     src={pizzaAmericanaImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -25,6 +26,7 @@ export function PizzaAmericana(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloPizzaAmericana"
                 align="center"
                 fontSize="25px"
                 casing={"uppercase"}
@@ -34,12 +36,14 @@ export function PizzaAmericana(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloPizzaAmericana"
                 align={"center"}
                 fontSize={"15px"} >
                     Jamon, Carne, Salchica y Pepperoni
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPizzaAmericana"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -48,7 +52,23 @@ export function PizzaAmericana(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaAmericana");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPizzaAmericana");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPizzaAmericana");
+                    const imagenArticulo = document.getElementById("imagenArticuloPizzaAmericana");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPizzaAmericana");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPizzaAmericana");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -90,12 +110,13 @@ export function PizzaAmericana(){
 
 
 
-export function PizzaBBQChicken(){
+export function PizzaBBQChicken(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPizzaBBQChicken"
                     src={pizzaBBQChickenImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -103,6 +124,7 @@ export function PizzaBBQChicken(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloPizzaBBQChicken"
                 align="center"
                 fontSize="25px"
                 casing={"uppercase"}
@@ -111,13 +133,15 @@ export function PizzaBBQChicken(){
                     BBQ Chicken
                 </Text>
 
-                <Text 
+                <Text
+                id="textoDescripcionArticuloPizzaBBQChicken" 
                 align={"center"}
                 fontSize={"15px"} >
                     Salsa BBQ, Pollo y Cebolla Morada
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPizzaBBQChicken"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -127,7 +151,23 @@ export function PizzaBBQChicken(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaBBQChicken");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPizzaBBQChicken");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPizzaBBQChicken");
+                    const imagenArticulo = document.getElementById("imagenArticuloPizzaBBQChicken");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPizzaBBQChicken");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPizzaBBQChicken");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -187,12 +227,13 @@ export function PizzaBBQChicken(){
 
 
 
-export function PizzaCampesina(){
+export function PizzaCampesina(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPizzaCampesina"
                     src={pizzaCampesinaImagen} 
                     boxSize="200px"
                     borderRadius='50px'
@@ -201,6 +242,7 @@ export function PizzaCampesina(){
                     
                 />
                 <Text 
+                id="textoNombreArticuloPizzaCampesina"
                 align="center"
                 fontSize="25px"
                 casing={"uppercase"}
@@ -210,12 +252,14 @@ export function PizzaCampesina(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloPizzaCampesina"
                 align={"center"}
                 fontSize={"15px"} >
                     Pollo, Champiñones, Pimenton
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPizzaCampesina"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -225,7 +269,23 @@ export function PizzaCampesina(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaCampesina");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPizzaCampesina");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPizzaCampesina");
+                    const imagenArticulo = document.getElementById("imagenArticuloPizzaCampesina");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPizzaCampesina");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPizzaCampesina");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -247,12 +307,13 @@ export function PizzaCampesina(){
 
 
 
-export function PizzaHawaiana(){
+export function PizzaHawaiana(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPizzaHawaiana"
                     src={pizzaHawaianaImagen} 
                     boxSize="200px"
                     borderRadius='300px'
@@ -260,7 +321,8 @@ export function PizzaHawaiana(){
                     h={"200"}
                     
                 />
-                <Text 
+                <Text
+                id="textoNombreArticuloPizzaHawaiana" 
                 align="center"
                 fontSize="25px"
                 casing={"uppercase"}
@@ -270,12 +332,14 @@ export function PizzaHawaiana(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloPizzaHawaiana"
                 align={"center"}
                 fontSize={"15px"} >
                     Pollo, Jamon, Piña
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPizzaHawaiana"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -285,7 +349,23 @@ export function PizzaHawaiana(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaHawaiana");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPizzaHawaiana");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPizzaHawaiana");
+                    const imagenArticulo = document.getElementById("imagenArticuloPizzaHawaiana");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPizzaHawaiana");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPizzaHawaiana");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -333,12 +413,13 @@ export function PizzaHawaiana(){
 
 
 
-export function PizzaMechadaBBQ(){
+export function PizzaMechadaBBQ(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPizzaMechadaBBQ"
                     src={pizzaMechadaBBQImagen} 
                     boxSize="200px"
                     borderRadius='300px'
@@ -347,6 +428,7 @@ export function PizzaMechadaBBQ(){
                     
                 />
                 <Text 
+                id="textoNombreArticuloPizzaMechadaBBQ"
                 align="center"
                 fontSize="25px"
                 casing={"uppercase"}
@@ -356,12 +438,14 @@ export function PizzaMechadaBBQ(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloPizzaMechadaBBQ"
                 align={"center"}
                 fontSize={"15px"} >
                     Carne Mechada, Tomate, Cebolla
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPizzaMechadaBBQ"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -371,7 +455,23 @@ export function PizzaMechadaBBQ(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaMechadaBBQ");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPizzaMechadaBBQ");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPizzaMechadaBBQ");
+                    const imagenArticulo = document.getElementById("imagenArticuloPizzaMechadaBBQ");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPizzaMechadaBBQ");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPizzaMechadaBBQ");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -414,12 +514,13 @@ export function PizzaMechadaBBQ(){
 
 
 
-export function PizzaVeganQueen(){
+export function PizzaVeganQueen(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPizzaVeganQueen"
                     src={pizzaVeganQueenImagen} 
                     boxSize="200px"
                     borderRadius='300px'
@@ -428,6 +529,7 @@ export function PizzaVeganQueen(){
                     
                 />
                 <Text 
+                id="textoNombreArticuloPizzaVeganQueen"
                 align="center"
                 fontSize="25px"
                 casing={"uppercase"}
@@ -437,12 +539,14 @@ export function PizzaVeganQueen(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloPizzaVeganQueen"
                 align={"center"}
                 fontSize={"15px"} >
                     Champiñón, Pimenton, Cebolla Morada, Choclo,Tomate y Aceitunas
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPizzaVeganQueen"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -452,7 +556,23 @@ export function PizzaVeganQueen(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaVeganQueen");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPizzaVeganQueen");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPizzaVeganQueen");
+                    const imagenArticulo = document.getElementById("imagenArticuloPizzaVeganQueen");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPizzaVeganQueen");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPizzaVeganQueen");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -483,12 +603,13 @@ export function PizzaVeganQueen(){
 
 
 
-export function PizzaCordillerana(){
+export function PizzaCordillerana(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPizzaCordillerana"
                     src={PizzaCordilleranaImagen} 
                     boxSize="200px"
                     borderRadius='300px'
@@ -497,6 +618,7 @@ export function PizzaCordillerana(){
                     
                 />
                 <Text 
+                id="textoNombreArticuloPizzaCordillerana"
                 align="center"
                 fontSize="25px"
                 casing={"uppercase"}
@@ -506,12 +628,14 @@ export function PizzaCordillerana(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloPizzaCordillerana"
                 align={"center"}
                 fontSize={"15px"} >
                     Delicioso chorizo, carne, pimentón y cebolla
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPizzaCordillerana"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -521,7 +645,23 @@ export function PizzaCordillerana(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaCordillerana");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPizzaCordillerana");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPizzaCordillerana");
+                    const imagenArticulo = document.getElementById("imagenArticuloPizzaCordillerana");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPizzaCordillerana");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPizzaCordillerana");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -559,12 +699,13 @@ export function PizzaCordillerana(){
 
 
 
-export function PizzaSuperPepperoni(){
+export function PizzaSuperPepperoni(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPizzaSuperPepperoni"
                     src={pizzaSuperPepperoniImagen} 
                     boxSize="200px"
                     borderRadius='300px'
@@ -573,6 +714,7 @@ export function PizzaSuperPepperoni(){
                     
                 />
                 <Text 
+                id="textoNombreArticuloPizzaSuperPepperoni"
                 align="center"
                 fontSize="25px"
                 casing={"uppercase"}
@@ -582,12 +724,14 @@ export function PizzaSuperPepperoni(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloPizzaSuperPepperoni"
                 align={"center"}
                 fontSize={"15px"} >
                     Extra queso mozzarella, doble pepperoni.
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPizzaSuperPepperoni"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -597,7 +741,23 @@ export function PizzaSuperPepperoni(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPizzaSuperPepperoni");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPizzaSuperPepperoni");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPizzaSuperPepperoni");
+                    const imagenArticulo = document.getElementById("imagenArticuloPizzaSuperPepperoni");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPizzaSuperPepperoni");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPizzaSuperPepperoni");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -614,6 +774,75 @@ export function PizzaSuperPepperoni(){
     )
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -812,117 +1041,3 @@ export function ArmaTuPizzaItem(){
     )
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

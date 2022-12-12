@@ -44,12 +44,21 @@ export function MenuBarra(props) {
     const opcionesVegetales = ["Aceitunas", "Choclo", "Piña", "Cebolla", "Pimentón", "Tomate", "Champiñones"]
     const opcionesTiposQueso = ["Gouda", "Mozzarella"]
 
-    console.log("Menu barra cantidad de articulos: ",props.largoCarritoBebidas);
-    console.log("MEnu Barra articulos: ",props.carritoBebidas);
+    //let carritoBebidas = props.carritoBebidas;
+    //let carritoSalsas = props.carritosSalsas;
+    //let carritoAcompañamientos = props.carritoAcompañamientos;
+    //let carritoPizzas = props.carritoPizzassssssss;
+
+    let carritoComprasFinal = props.carritoBebidas.concat(props.carritoSalsas,props.carritoAcompañamientos,props.carritoPizzas);
+
+    console.log("MEnu Barra articulos bebidas: ",props.carritoBebidas);
+    console.log("Menu barra articulos salsas: ",props.carritoSalsas);
+    console.log("Carrito concatenao", carritoComprasFinal);
+
 
     //Se actualiza el numero de articulos que sale en la barra en el botón del carrito al lado del icono
     let documento = document.getElementById("textoCantidadItemsCarrito");
-    documento.textContent = props.largoCarritoBebidas;
+    documento.textContent = carritoComprasFinal.length;
 
 
   return (

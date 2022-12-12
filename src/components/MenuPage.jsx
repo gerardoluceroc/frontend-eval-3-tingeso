@@ -12,22 +12,28 @@ import { CatalogoAcompañamientos } from "./CatalogoAcompañamientos";
 
 export function MenuPage(){
     const [carritoBebidas, setCarritoBebidas] = useState([]);
-
     const [largoCarritoBebidas, setLargoCarritoBebidas] = useState(carritoBebidas.length);
 
-    useEffect(()=>{
-        console.log("Estoy en menu page dentro del use effect, largo carrito bebidas ess:",largoCarritoBebidas);
+    const [carritoSalsas, setCarritoSalsas] = useState([]);
+    const [largoCarritoSalsas, setLargoCarritoSalsas] = useState(carritoSalsas.length);
 
-    },[largoCarritoBebidas])
+    const [carritoAcompañamientos, setCarritoAcompañamientos] = useState([]);
+    const [largoCarritoAcompañamientos, setLargoCarritoAcompañamientos] = useState(carritoSalsas.length);
 
-    const lala = () => {console.log("Estoy en el menu y actualmente el carro esss: ",carritoBebidas);}
+    const [carritoPizzas, setCarritoPizzas] = useState([]);
+    const [largoCarritoPizzas, setLargoCarritoPizzas] = useState(carritoPizzas.length);
 
 
     return(
         
-        <>  <Button onClick={()=>{lala()}}>LALA</Button>
+        <> 
             <Box bgColor={'lightsalmon'}>
-                <MenuBarra largoCarritoBebidas = {largoCarritoBebidas} carritoBebidas={carritoBebidas}/>
+                <MenuBarra 
+                largoCarritoBebidas = {largoCarritoBebidas} carritoBebidas={carritoBebidas}
+                largoCarritoSalsas = {largoCarritoSalsas} carritoSalsas={carritoSalsas}
+                largoCarritoAcompañamientos = {largoCarritoAcompañamientos} carritoAcompañamientos ={carritoAcompañamientos}
+                largoCarritoPizzas = {largoCarritoPizzas} carritoPizzas ={carritoPizzas}
+                />
                 <Stack direction={"column"} spacing={5}>
                     <Container maxWidth={"full"}>
                         <Container>
@@ -39,7 +45,7 @@ export function MenuPage(){
                                 Pizzas
                             </Text>
                         </Container>
-                        <CatalogoPizzas/>
+                        <CatalogoPizzas actualizarCarritoPadre = {(carrito) => {setCarritoPizzas(carrito)}} actualizarLargoCarritoPadre={(largo)=>{setLargoCarritoPizzas(largo)}}/>
                     </Container>
 
                     <Container maxWidth={"full"}>
@@ -52,7 +58,7 @@ export function MenuPage(){
                                 Acompañamientos
                             </Text>
                         </Container>
-                        <CatalogoAcompañamientos/>
+                        <CatalogoAcompañamientos actualizarCarritoPadre = {(carrito) => {setCarritoAcompañamientos(carrito)}} actualizarLargoCarritoPadre={(largo)=>{setLargoCarritoAcompañamientos(largo)}}/>
                     </Container>
 
                     <Container maxWidth={"full"}>
@@ -65,7 +71,7 @@ export function MenuPage(){
                                 Salsas
                             </Text>
                         </Container>
-                        <CatalogoSalsas/>
+                        <CatalogoSalsas actualizarCarritoPadre = {(carrito) => {setCarritoSalsas(carrito)}} actualizarLargoCarritoPadre={(largo)=>{setLargoCarritoSalsas(largo)}}/>
                     </Container>
 
                     <Container maxWidth={"full"}>

@@ -5,12 +5,13 @@ import cheesyVeggiesImagen from "../assets/Cheesy Veggies.jpg"
 import alitasPolloImagen from "../assets/Alitas de Pollo.jpg"
 import chickenPoppersImagen from "../assets/Chiken Poppers.jpg"
 
-export function PalitosAjo(){
+export function PalitosAjo(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloPalitosAjo"
                     src={palitosAjosImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -18,6 +19,7 @@ export function PalitosAjo(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloPalitosAjo"
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -27,6 +29,7 @@ export function PalitosAjo(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloPalitosAjo"
                 align="center"
                 fontSize="13px"
                 >
@@ -34,6 +37,7 @@ export function PalitosAjo(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloPalitosAjo"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -43,7 +47,23 @@ export function PalitosAjo(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonPalitosAjo");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloPalitosAjo");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloPalitosAjo");
+                    const imagenArticulo = document.getElementById("imagenArticuloPalitosAjo");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloPalitosAjo");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonPalitosAjo");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -83,12 +103,13 @@ export function PalitosAjo(){
 
 
 
-export function CheesyVeggies(){
+export function CheesyVeggies(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloCheesyVeggies"
                     src={cheesyVeggiesImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -96,6 +117,7 @@ export function CheesyVeggies(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloCheesyVeggies"
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -105,6 +127,7 @@ export function CheesyVeggies(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloCheesyVeggies"
                 align="center"
                 fontSize="13px"
                 >
@@ -112,6 +135,7 @@ export function CheesyVeggies(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloCheesyVeggies"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -121,7 +145,23 @@ export function CheesyVeggies(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonCheesyVeggies");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloCheesyVeggies");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloCheesyVeggies");
+                    const imagenArticulo = document.getElementById("imagenArticuloCheesyVeggies");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloCheesyVeggies");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonCheesyVeggies");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -159,12 +199,13 @@ export function CheesyVeggies(){
 
 
 
-export function ChickenPoppers(){
+export function ChickenPoppers(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloChickenPoppers"
                     src={chickenPoppersImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -172,6 +213,7 @@ export function ChickenPoppers(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloChickenPoppers"
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -181,6 +223,7 @@ export function ChickenPoppers(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloChickenPoppers"
                 align="center"
                 fontSize="13px"
                 >
@@ -188,6 +231,7 @@ export function ChickenPoppers(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloChickenPoppers"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -197,7 +241,23 @@ export function ChickenPoppers(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonChickenPoppers");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloChickenPoppers");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloChickenPoppers");
+                    const imagenArticulo = document.getElementById("imagenArticuloChickenPoppers");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloChickenPoppers");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonChickenPoppers");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
@@ -233,12 +293,13 @@ export function ChickenPoppers(){
 
 
 
-export function AlitasPollo(){
+export function AlitasPollo(props){
     return(
 
         <Box bgColor={'oldlace'} borderRadius='35px' overflow={"hidden"} borderWidth="10px" borderColor={"ivory"} boxSize="400px">
             <Stack spacing={2}>
                 <Image 
+                    id="imagenArticuloAlitasPollo"
                     src={alitasPolloImagen} 
                     boxSize="200px"
                     borderRadius='330px'
@@ -246,6 +307,7 @@ export function AlitasPollo(){
                     h={"200"}
                 />
                 <Text 
+                id="textoNombreArticuloAlitasPollo"
                 align="center"
                 fontSize="20px"
                 casing={"uppercase"}
@@ -255,6 +317,7 @@ export function AlitasPollo(){
                 </Text>
 
                 <Text 
+                id="textoDescripcionArticuloAlitasPollo"
                 align="center"
                 fontSize="13px"
                 >
@@ -262,6 +325,7 @@ export function AlitasPollo(){
                 </Text>
 
                 <Text
+                id="textoPrecioArticuloAlitasPollo"
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
@@ -271,7 +335,23 @@ export function AlitasPollo(){
 
                 <Box
                 as={Button}
-                onClick={()=>{const textoBoton = document.getElementById("textoBotonAlitasPollo");
+                onClick={()=>{
+                    //Se guarda la info del articulo, se guarda en un objeto y se agrega al carrito
+                    const nombreArticulo = document.getElementById("textoNombreArticuloAlitasPollo");
+                    const precioArticulo = document.getElementById("textoPrecioArticuloAlitasPollo");
+                    const imagenArticulo = document.getElementById("imagenArticuloAlitasPollo");
+                    const descripcionArticulo = document.getElementById("textoDescripcionArticuloAlitasPollo");
+                    let articulo = {
+                        name: nombreArticulo.textContent,
+                        price: precioArticulo.textContent,
+                        description: descripcionArticulo.textContent,
+                        image: imagenArticulo.getAttribute("src")
+                    };
+                    console.log("Articulo a agregar ",articulo);
+                    props.agregarArticulo(articulo);
+
+                    //Se le indica al usuario que el articulo fue agregado una vez presiona el botón
+                            const textoBoton = document.getElementById("textoBotonAlitasPollo");
                             textoBoton.textContent="Agregado Al Carrito!";
                             setTimeout(()=>{textoBoton.textContent="Agregar"}, 700)}}
                 bgColor={'wheat'}
