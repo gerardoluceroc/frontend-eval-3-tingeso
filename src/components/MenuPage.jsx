@@ -10,7 +10,7 @@ import { CatalogoBebidas } from "./CatalogoBebidas";
 import { CatalogoSalsas } from "./CatalogoSalsas";
 import { CatalogoAcompañamientos } from "./CatalogoAcompañamientos";
 
-export function MenuPage(){
+export function MenuPage(props){
     const [carritoBebidas, setCarritoBebidas] = useState([]);
     const [largoCarritoBebidas, setLargoCarritoBebidas] = useState(carritoBebidas.length);
 
@@ -33,6 +33,9 @@ export function MenuPage(){
                 largoCarritoSalsas = {largoCarritoSalsas} carritoSalsas={carritoSalsas}
                 largoCarritoAcompañamientos = {largoCarritoAcompañamientos} carritoAcompañamientos ={carritoAcompañamientos}
                 largoCarritoPizzas = {largoCarritoPizzas} carritoPizzas ={carritoPizzas}
+
+                actualizarLargoCarritoDeCompras={(largo)=>{props.actualizarLargoCarritoDeCompras(largo)}}
+                actualizarCarritoDeCompras={(carro)=>{props.actualizarCarritoDeCompras(carro)}}
                 />
                 <Stack direction={"column"} spacing={5}>
                     <Container maxWidth={"full"}>

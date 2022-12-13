@@ -26,10 +26,11 @@ import {BiStoreAlt} from "react-icons/bi"
 import {FaPizzaSlice} from "react-icons/fa"
 
 import logoPizza from '../assets/pizza-house-transparente.png'
-import { Link } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import { OpcionesBotones } from './ButtonOptionGroup';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { CarritoPage } from './CarritoPage/CarritoPage';
 {/* Componente Relacionado con el menu de la página*/}
 export function MenuBarra(props) {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -50,19 +51,29 @@ export function MenuBarra(props) {
     //let carritoPizzas = props.carritoPizzassssssss;
 
     let carritoComprasFinal = props.carritoBebidas.concat(props.carritoSalsas,props.carritoAcompañamientos,props.carritoPizzas);
+    let largoCarritoComprasFinal = carritoComprasFinal.length;
 
-    console.log("MEnu Barra articulos bebidas: ",props.carritoBebidas);
-    console.log("Menu barra articulos salsas: ",props.carritoSalsas);
-    console.log("Carrito concatenao", carritoComprasFinal);
+    console.log("Estoy en Menu Barra y el carrito es",carritoComprasFinal," Y el largo es ",largoCarritoComprasFinal);
 
 
-    //Se actualiza el numero de articulos que sale en la barra en el botón del carrito al lado del icono
-    let documento = document.getElementById("textoCantidadItemsCarrito");
-    documento.textContent = carritoComprasFinal.length;
+    const updateCarroCompras = (carro, largoCarro) => {
+      props.actualizarCarritoDeCompras(carro);
+      props.actualizarLargoCarritoDeCompras(largoCarro);
+    }
+
+    
+
+    useEffect(()=> {
+      //Se actualiza el numero de articulos que sale en la barra en el botón del carrito al lado del icono
+      let documento = document.getElementById("textoCantidadItemsCarrito");
+      documento.textContent = carritoComprasFinal.length;}
+      );
+
 
 
   return (
     <>
+
 
     <Flex bg='oldlace' w='100%' p={1} color='white'>
 
@@ -205,7 +216,7 @@ export function MenuBarra(props) {
         </Stack>
         
         <Link to={"/Carrito"}>
-        <Box as={Button} colorScheme={'blackAlpha'} px={'3'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<><BsFillCartFill/><Text id="textoCantidadItemsCarrito"></Text></>}>
+        <Box as={Button} onClick={()=>{updateCarroCompras(carritoComprasFinal,largoCarritoComprasFinal);}} colorScheme={'blackAlpha'} px={'3'} py={'9'} bgColor='lightsalmon' color='oldlace' variant='ghost' rightIcon={<><BsFillCartFill/><Text id="textoCantidadItemsCarrito"></Text></>}>
             <Text fontSize='2xl' color='oldlace'>Carrito</Text>
         </Box>
         </Link>

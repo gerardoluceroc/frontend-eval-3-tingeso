@@ -9,15 +9,30 @@ import {
     useColorModeValue as mode,
   } from '@chakra-ui/react'
   import * as React from 'react'
+import { useEffect } from 'react'
 import { MenuBarra } from '../MenuBarra'
   import { CartItem } from './CartItem'
   import { CartOrderSummary } from './CartOrderSummary'
   import { cartData } from './_data'
   
   export function CarritoPage(props){ 
+
+      console.log("Estoy en carrito page y el carrito de compras es:",props.carritoDeCompras);
+
+
     return(
+
     <>
-    <MenuBarra/>
+    <MenuBarra 
+                largoCarritoBebidas = {[]} carritoBebidas={props.carritoDeCompras}
+                largoCarritoSalsas = {[]} carritoSalsas={[]}
+                largoCarritoAcompañamientos = {[]} carritoAcompañamientos ={[]}
+                largoCarritoPizzas = {[]} carritoPizzas ={[]}
+                actualizarLargoCarritoDeCompras={(largo)=>{props.actualizarLargoCarritoDeCompras(largo)}}
+                actualizarCarritoDeCompras={(carro)=>{props.actualizarCarritoDeCompras(carro)}}
+
+                />
+    {/*<MenuBarra/>*/}
     <Box
       maxW={{
         base: '3xl',

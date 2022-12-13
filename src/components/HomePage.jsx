@@ -9,7 +9,14 @@ export function HomePage(){
         <>
 
             <Box bgColor={'lightsalmon'} h={739}>
-                <MenuBarra carritoBebidas = {[]}/>
+                <MenuBarra 
+                largoCarritoBebidas = {[]} carritoBebidas={[]}
+                largoCarritoSalsas = {[]} carritoSalsas={[]}
+                largoCarritoAcompañamientos = {[]} carritoAcompañamientos ={[]}
+                largoCarritoPizzas = {[]} carritoPizzas ={[]}
+                actualizarLargoCarritoDeCompras={[]}
+                actualizarCarritoDeCompras={[]}
+                />
                 <ImageSlider/>
                 <Footer/>
             </Box>

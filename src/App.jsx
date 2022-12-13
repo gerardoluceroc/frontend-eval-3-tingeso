@@ -6,32 +6,20 @@ import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom
 import { MenuPage } from "./components/MenuPage";
 import { HomePage } from "./components/HomePage";
 import { CarritoPage } from "./components/CarritoPage/CarritoPage";
+import { useState } from "react";
 
 export function App() {
 
-  // eslint-disable-next-line no-lone-blocks
-  {/*
-  const slides = [
-    { url: logoPizzaHouse, title: "beach" },
-    { url: logoPizzaHouse2, title: "boat" },
-  ];
-  const containerStyles = {
-    width: "800px",
-    height: "480px",
-    margin: "0 auto",
-  };
-  <div>
-          <h1>Hello monsterlessons</h1>
-          <div style={containerStyles}>
-            <ImageSlider slides={slides} />
-          </div>
-</div>*/}
+  const [largoCarritoDeCompras, setLargoCarritoDeCompras] = useState(0);
+  const [carritoDeCompras, setCarritoDeCompras] = useState([]);
+  console.log("Estoy en APP y el largo del carrito de compras es:",largoCarritoDeCompras);
+  console.log("Estoy en APP y el carrito de compras es:",carritoDeCompras);
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/Menu" element={<MenuPage/>} />
-        <Route path="/Carrito" element={<CarritoPage/>} />
+        <Route path="/Menu" element={<MenuPage actualizarLargoCarritoDeCompras={(largo)=>{setLargoCarritoDeCompras(largo)}} actualizarCarritoDeCompras={(carro)=>{setCarritoDeCompras(carro)}} />} />
+        <Route path="/Carrito" element={<CarritoPage carritoDeCompras={carritoDeCompras} actualizarLargoCarritoDeCompras={(largo)=>{setLargoCarritoDeCompras(largo)}} actualizarCarritoDeCompras={(carro)=>{setCarritoDeCompras(carro)}}/>}/>
       </Routes>
 
         
