@@ -17,14 +17,42 @@ import { MenuBarra } from '../MenuBarra'
   
   export function CarritoPage(props){ 
 
-      console.log("Estoy en carrito page y el carrito de compras es:",props.carritoDeCompras);
+      let carritosDeCompras = props.carritoDeCompras;
+      let cantidadItems = carritosDeCompras.length;
+      let carritoComprasArreglado = [];
+      let keysCarrito = [];
+
+      for(let i=0;i<cantidadItems;i++){
+        if(keysCarrito.includes(carritosDeCompras[i]['name']) === false){
+
+          let cantidadRepeticiones = 0;
+          let itemParaAgregar = {cantidad : 0};
+          
+          for(let j=0; j<cantidadItems; j++){
+            if(carritosDeCompras[i]['name'] === carritosDeCompras[j]['name']){
+              cantidadRepeticiones = cantidadRepeticiones+1;
+            }
+          }
+
+          keysCarrito.push(carritosDeCompras[i]['name']);
+          itemParaAgregar['cantidad'] = cantidadRepeticiones;
+          itemParaAgregar = Object.assign(carritosDeCompras[i],itemParaAgregar);
+          carritoComprasArreglado.push(itemParaAgregar);
+
+
+        }
+      }
+
+      console.log("EL CARRITO DE COMPRAS ARREGLADO ES:",carritoComprasArreglado);
+
 
 
     return(
 
     <>
+    <Box bgColor={"lightsalmon"}>
     <MenuBarra 
-                largoCarritoBebidas = {[]} carritoBebidas={props.carritoDeCompras}
+                largoCarritoBebidas = {[]} carritoBebidas={carritosDeCompras}
                 largoCarritoSalsas = {[]} carritoSalsas={[]}
                 largoCarritoAcompañamientos = {[]} carritoAcompañamientos ={[]}
                 largoCarritoPizzas = {[]} carritoPizzas ={[]}
@@ -34,6 +62,7 @@ import { MenuBarra } from '../MenuBarra'
                 />
     {/*<MenuBarra/>*/}
     <Box
+      bgColor={"oldlace"}
       maxW={{
         base: '3xl',
         lg: '7xl',
@@ -71,24 +100,25 @@ import { MenuBarra } from '../MenuBarra'
           flex="2"
         >
           <Heading fontSize="2xl" fontWeight="extrabold">
-            Shopping Cart (3 items)
+            Carrito De Compras ({cantidadItems} items)
           </Heading>
   
           <Stack spacing="6">
-            {cartData.map((item) => (
-              <CartItem key={item.id} {...item} />
+            {carritoComprasArreglado.map((item) => (
+              <CartItem key={item.name} {...item} />
             ))}
           </Stack>
         </Stack>
   
         <Flex direction="column" align="center" flex="1">
-          <CartOrderSummary />
+          <CartOrderSummary carritoDeCompras = {carritosDeCompras} />
           <HStack mt="6" fontWeight="semibold">
             <p>o</p>
-            <Link to={"/Menu"} color={mode('blue.500', 'blue.200')}>Continuar Comprando</Link>
+            <Link to={"/Menu"} color={"coral"}>Continuar Comprando</Link>
           </HStack>
         </Flex>
       </Stack>
+    </Box>
     </Box>
     </>
     )
@@ -96,9 +126,3 @@ import { MenuBarra } from '../MenuBarra'
 
 
 
-
-export function nose(props){
-  return(
-    <Text color="red" >Hola</Text>
-  )
-}

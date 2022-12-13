@@ -22,34 +22,40 @@ import {
     )
   }
   
-  export const CartOrderSummary = () => {
+  export const CartOrderSummary = (props) => {
+    let carro = props.carritoDeCompras;
+    let cantidadItems = carro.length;
+    let costoEnvio = 2000
+    let cantidadPropina = 0;
+
+    
+    let precioTotalArticulos = 0;
+    for(let i=0;i<cantidadItems;i++){
+      precioTotalArticulos = precioTotalArticulos + parseInt(carro[i]['price'].substr(1));
+    }
     return (
-      <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
-        <Heading size="md">Order Summary</Heading>
+      <Stack spacing="8" borderWidth="3px" borderColor={"lightsalmon"} rounded="lg" padding="8" width="full">
+        <Heading size="md">Resumen del Pedido</Heading>
   
         <Stack spacing="6">
-          <OrderSummaryItem label="Subtotal" value={formatPrice(597)} />
-          <OrderSummaryItem label="Shipping + Tax">
-            <Link href="#" textDecor="underline">
-              Calculate shipping
-            </Link>
+          <OrderSummaryItem label="Total Parcial" value={"$".concat(precioTotalArticulos)} />
+
+          <OrderSummaryItem label="Costo de Envío" value= {"$".concat(costoEnvio)}>
           </OrderSummaryItem>
-          <OrderSummaryItem label="Coupon Code">
-            <Link href="#" textDecor="underline">
-              Add coupon code
-            </Link>
+
+          <OrderSummaryItem label="Propina" value={"$".concat(cantidadPropina)}>
           </OrderSummaryItem>
           <Flex justify="space-between">
             <Text fontSize="lg" fontWeight="semibold">
               Total
             </Text>
             <Text fontSize="xl" fontWeight="extrabold">
-              {formatPrice(597)}
+              {"$".concat(precioTotalArticulos+costoEnvio+cantidadPropina)}
             </Text>
           </Flex>
         </Stack>
-        <Button colorScheme="blue" size="lg" fontSize="md" rightIcon={<FaArrowRight />}>
-          Checkout
+        <Button bgColor={"lightsalmon"} colorScheme="orange" size="lg" fontSize="md" rightIcon={<FaArrowRight />}>
+          Proceder Al Pago
         </Button>
       </Stack>
     )

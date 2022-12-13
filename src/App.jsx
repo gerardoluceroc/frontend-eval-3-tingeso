@@ -18,7 +18,7 @@ export function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/Menu" element={<MenuPage actualizarLargoCarritoDeCompras={(largo)=>{setLargoCarritoDeCompras(largo)}} actualizarCarritoDeCompras={(carro)=>{setCarritoDeCompras(carro)}} />} />
+        <Route path="/Menu" element={<MenuPage carritoDeCompras={carritoDeCompras} actualizarLargoCarritoDeCompras={(largo)=>{setLargoCarritoDeCompras(largo)}} actualizarCarritoDeCompras={(carro)=>{setCarritoDeCompras(carro)}} />} />
         <Route path="/Carrito" element={<CarritoPage carritoDeCompras={carritoDeCompras} actualizarLargoCarritoDeCompras={(largo)=>{setLargoCarritoDeCompras(largo)}} actualizarCarritoDeCompras={(carro)=>{setCarritoDeCompras(carro)}}/>}/>
       </Routes>
 

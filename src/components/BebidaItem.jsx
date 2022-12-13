@@ -39,7 +39,7 @@ export function Pepsi350(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $1.490
+                    $1490
                 
                 </Text>
 
@@ -136,7 +136,7 @@ export function Pepsi1L(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $2.990
+                    $2990
                 
                 </Text>
 
@@ -218,7 +218,7 @@ export function PepsiLight350(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $1.490
+                    $1490
                 
                 </Text>
 
@@ -310,7 +310,7 @@ export function PepsiLight1L(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $2.990
+                    $2990
                 
                 </Text>
 
@@ -391,7 +391,7 @@ export function Fanta350(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $1.490
+                    $1490
                 
                 </Text>
 
@@ -473,7 +473,7 @@ export function Fanta1L(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $2.990
+                    $2990
                 
                 </Text>
 
@@ -558,7 +558,7 @@ export function Cachantun500SinGas(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $1.190
+                    $1190
                 
                 </Text>
 
@@ -648,7 +648,7 @@ export function Cachantun500ConGas(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $1.190
+                    $1190
                 
                 </Text>
 
@@ -736,7 +736,7 @@ export function JugoWatts1LDurazno(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $2.290
+                    $2290
                 
                 </Text>
 

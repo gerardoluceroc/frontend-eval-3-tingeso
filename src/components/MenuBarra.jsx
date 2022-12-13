@@ -184,7 +184,7 @@ export function MenuBarra(props) {
         </Link>
 
         <Link to={"/Menu"}>
-          <Box as={Button} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
+          <Box as={Button} onClick={()=>{updateCarroCompras(carritoComprasFinal,largoCarritoComprasFinal);}} colorScheme={'blackAlpha'} px={'5'} py={'9'} bgColor='lightsalmon' color='orange' variant='ghost'>
             <Text fontSize='2xl' color='oldlace'>Menú</Text>
           </Box>
         </Link>

@@ -41,7 +41,7 @@ export function PalitosAjo(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $4.290
+                    $4290
                 
                 </Text>
 
@@ -139,7 +139,7 @@ export function CheesyVeggies(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $5.690
+                    $5690
                 
                 </Text>
 
@@ -235,7 +235,7 @@ export function ChickenPoppers(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $5.390
+                    $5390
                 
                 </Text>
 
@@ -329,7 +329,7 @@ export function AlitasPollo(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $5.290
+                    $5290
                 
                 </Text>
 

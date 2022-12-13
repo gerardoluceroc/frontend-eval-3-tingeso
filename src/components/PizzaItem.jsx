@@ -47,7 +47,7 @@ export function PizzaAmericana(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $14.750    
+                    $14750    
                 </Text>
 
                 <Box
@@ -145,7 +145,7 @@ export function PizzaBBQChicken(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $14.750
+                    $14750
                 
                 </Text>
 
@@ -263,7 +263,7 @@ export function PizzaCampesina(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $14.750
+                    $14750
                 
                 </Text>
 
@@ -343,7 +343,7 @@ export function PizzaHawaiana(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $12.750
+                    $12750
                 
                 </Text>
 
@@ -449,7 +449,7 @@ export function PizzaMechadaBBQ(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $15.750
+                    $15750
                 
                 </Text>
 
@@ -550,7 +550,7 @@ export function PizzaVeganQueen(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $14.750
+                    $14750
                 
                 </Text>
 
@@ -639,7 +639,7 @@ export function PizzaCordillerana(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $14.750
+                    $14750
                 
                 </Text>
 
@@ -735,7 +735,7 @@ export function PizzaSuperPepperoni(props){
                 align={"center"}
                 fontSize={"15px"}
                 as={'b'}>
-                    $14.750
+                    $14750
                 
                 </Text>
 
