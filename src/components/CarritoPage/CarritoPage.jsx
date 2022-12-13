@@ -13,7 +13,8 @@ import { useEffect } from 'react'
 import { MenuBarra } from '../MenuBarra'
   import { CartItem } from './CartItem'
   import { CartOrderSummary } from './CartOrderSummary'
-  import { cartData } from './_data'
+  import Footer from '../Footer'
+
   
   export function CarritoPage(props){ 
 
@@ -118,8 +119,12 @@ import { MenuBarra } from '../MenuBarra'
           </HStack>
         </Flex>
       </Stack>
+      
     </Box>
+    <Footer/>
     </Box>
+
+    
     </>
     )
 }
