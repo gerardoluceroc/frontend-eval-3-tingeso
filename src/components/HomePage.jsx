@@ -1,4 +1,5 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Container, HStack, Stack, Text } from "@chakra-ui/react";
+import { CatalogoHome } from "./CatalogoHome";
 import Footer from "./Footer";
 import ImageSlider from "./ImageSlider";
 import { MenuBarra } from "./MenuBarra";
@@ -8,7 +9,7 @@ export function HomePage(){
 
         <>
 
-            <Box bgColor={'lightsalmon'} h={739}>
+            <Box bgColor={'lightsalmon'} h={1639}>
                 <MenuBarra 
                 largoCarritoBebidas = {[]} carritoBebidas={[]}
                 largoCarritoSalsas = {[]} carritoSalsas={[]}
@@ -18,7 +19,20 @@ export function HomePage(){
                 actualizarCarritoDeCompras={[]}
                 />
                 <ImageSlider/>
-                <Footer/>
+                <Container>
+                    <Text 
+                    align={"center"}
+                    fontSize={"70px"}
+                    as='b'
+                    color={"ivory"} >
+                        Mas Populares
+                    </Text>
+                </Container>
+                <Stack direction={"column"} spacing={10}>
+                    
+                    <CatalogoHome/>
+                    <Footer/>
+                </Stack>
             </Box>
         
         </>
