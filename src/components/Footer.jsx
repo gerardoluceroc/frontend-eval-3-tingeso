@@ -37,27 +37,27 @@ function Footer() {
             Menú
           </a>
           </Link>
-          <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/trail-mountain-bikes/slash/slash-9-8-gx-axs/p/35192/?colorCode=grey">
+          <a href="https://www.google.com/">
             Consultar Pedido
           </a>
-          <a href="https://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road-bikes/%C3%A9monda/%C3%A9monda-slr/%C3%A9monda-slr-6-etap/p/35022/?colorCode=bluedark_red">
+          <a href="https://www.google.com/">
             Localizador de Tiendas
           </a>
         </div>
         <div className="footer_col">
           <h3>Ayuda</h3>
-          <a href="https://www.trekbikes.com/us/en_US/bikes/hybrid-bikes/electric-hybrid-bikes/verve/verve-2/p/28299/?colorCode=blue">
+          <a href="https://www.google.com/">
             Preguntas Frecuentes
           </a>
-          <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/electric-mountain-bikes/e-caliber/e-caliber-9-6/p/34353/?colorCode=greydark_black">
+          <a href="https://www.google.com/">
             Contacto
           </a>
         </div>
         <div className="footer_col">
-          <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/cross-country-mountain-bikes/marlin/marlin-5/p/34587/?colorCode=greenvisibility_teal">
+          <a href="https://www.google.com/">
             Término y Condiciones
           </a>
-          <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/downhill-mountain-bikes/session/session-9-x01/p/34625/?colorCode=bluedark_blue">
+          <a href="https://www.google.com/">
             Política de Privacidad
           </a>
         </div>

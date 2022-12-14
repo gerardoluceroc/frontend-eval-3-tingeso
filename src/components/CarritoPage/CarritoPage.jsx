@@ -9,11 +9,12 @@ import {
     useColorModeValue as mode,
   } from '@chakra-ui/react'
   import * as React from 'react'
-import { useEffect } from 'react'
-import { MenuBarra } from '../MenuBarra'
+  import { useEffect } from 'react'
+  import { MenuBarra } from '../MenuBarra'
   import { CartItem } from './CartItem'
   import { CartOrderSummary } from './CartOrderSummary'
   import Footer from '../Footer'
+
 
   
   export function CarritoPage(props){ 
@@ -43,8 +44,6 @@ import { MenuBarra } from '../MenuBarra'
 
         }
       }
-
-      console.log("EL CARRITO DE COMPRAS ARREGLADO ES:",carritoComprasArreglado);
 
 
 
@@ -119,7 +118,6 @@ import { MenuBarra } from '../MenuBarra'
           </HStack>
         </Flex>
       </Stack>
-      
     </Box>
     <Footer/>
     </Box>

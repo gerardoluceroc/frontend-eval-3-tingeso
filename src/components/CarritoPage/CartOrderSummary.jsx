@@ -1,4 +1,5 @@
 import {
+  Box,
     Button,
     Flex,
     Heading,
@@ -39,7 +40,6 @@ import { useState } from 'react'
     let carro = props.carritoDeCompras;
     let cantidadItems = carro.length;
     let costoEnvio = 2000
-    let cantidadPropinaa = 0;
 
     const [cantidadPropina, setCantidadPropina] = useState(0);
     const [opcion0Porciento, setOpcion0Porciento] = useState(false);
@@ -78,10 +78,13 @@ import { useState } from 'react'
 
 
     return (
+
       <Stack spacing="8" borderWidth="3px" borderColor={"lightsalmon"} rounded="lg" padding="8" width="full">
         <Heading size="md">Resumen del Pedido</Heading>
   
         <Stack spacing="6">
+
+          
           <OrderSummaryItem label="Total Parcial" value={"$".concat(precioTotalArticulos)} />
 
           <OrderSummaryItem label="Costo de Envío" value= {"$".concat(costoEnvio)}>
@@ -105,5 +108,6 @@ import { useState } from 'react'
           Proceder Al Pago
         </Button>
       </Stack>
+
     )
   }
